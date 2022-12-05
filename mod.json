@@ -1,0 +1,10 @@
+{
+  "Id": "SubnauticaTeslasuit",
+  "DisplayName": "Teslasuit Force Feedback",
+  "Author": "Roker2",
+  "Version": "0.0.1",
+  "Dependencies": [ "SMLHelper" ],
+  "Enable": true,
+  "Game": "Subnautica",
+  "AssemblyName": "SubnauticaTeslasuit.dll"
+}
