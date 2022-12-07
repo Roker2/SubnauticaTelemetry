@@ -2,6 +2,7 @@
 {
     interface IForceFeedbackProcessor
     {
-        void ProcessEvents(ForceFeedbackEvent[] events);
+        void ProcessEvents(ForceFeedbackEvent[] ffevents);
+        void ProcessEvent(ForceFeedbackEvent ffevent);
     }
 }
