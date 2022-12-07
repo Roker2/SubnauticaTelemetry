@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="ForceFeedback\ForceFeedbackEvent.cs" />
+    <Compile Include="ForceFeedback\IForceFeedbackProcessor.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Patches\PlayerUpdatePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
