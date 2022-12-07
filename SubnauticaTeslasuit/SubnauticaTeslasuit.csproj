@@ -71,6 +71,7 @@
     <Compile Include="ForceFeedback\ForceFeedbackType.cs" />
     <Compile Include="ForceFeedback\IForceFeedbackProcessor.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Mock\MockForceFeedbackProcessor.cs" />
     <Compile Include="Patches\PlayerUpdatePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subnautica\Consts.cs" />
