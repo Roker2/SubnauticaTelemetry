@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System.IO;
 using UnityEngine;
 
 namespace SubnauticaTeslasuit.Patches
@@ -13,17 +12,7 @@ namespace SubnauticaTeslasuit.Patches
             if (Player.MotorMode.Dive == __instance.motorMode)
             {
                 float playerDepth = Ocean.main.GetDepthOf(Player.main.gameObject);
-                using (StreamWriter writetext = new StreamWriter("log.txt", true))
-                {
-                    writetext.WriteLine(playerDepth.ToString());
-                }
-            }
-            else
-            {
-                using (StreamWriter writetext = new StreamWriter("log.txt", true))
-                {
-                    writetext.WriteLine("player is not in water");
-                }
+                Main.dataProcessor.ProcessPlayerDepth(playerDepth);
             }
         }
     }
