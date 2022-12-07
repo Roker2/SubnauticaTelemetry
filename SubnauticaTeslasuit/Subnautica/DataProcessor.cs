@@ -6,6 +6,8 @@
         private float MaxPressureFrequenceMultiplier = 1;
         public void ProcessPlayerDepth(float depth)
         {
+            if (!Main.Config.enableWaterPressureEffect)
+                return;
             depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
             float pressureFrequenceMultiplier = CalculateFrequenceMultiplier(CalculateDepthPrecent(depth));
         }
