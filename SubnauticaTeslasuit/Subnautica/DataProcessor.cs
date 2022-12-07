@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SubnauticaTeslasuit.Subnautica
+﻿namespace SubnauticaTeslasuit.Subnautica
 {
     class DataProcessor
     {
-        void ProcessPlayerDepth(float depth)
+        public void ProcessPlayerDepth(float depth)
         {
+            depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
+        }
 
+        private float Normalize(float value, float min, float max)
+        {
+            if (value > max)
+                return max;
+            if (value < min)
+                return min;
+            return value;
         }
     }
 }
