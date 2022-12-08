@@ -1,28 +1,14 @@
 ﻿using SubnauticaTeslasuit.ForceFeedback;
 using System.Collections.Generic;
-using System.IO;
+using Logger = QModManager.Utility.Logger;
 
 namespace SubnauticaTeslasuit.Mock
 {
     class MockForceFeedbackProcessor : IForceFeedbackProcessor
     {
-        private string LogFileName = "log.txt";
-
-        public MockForceFeedbackProcessor()
-        {
-            FileInfo fileInfo = new FileInfo(LogFileName);
-            if (fileInfo.Exists)
-            {
-                fileInfo.Delete();
-            }
-        }
-
         public void ProcessEvent(ForceFeedbackEvent ffevent)
         {
-            using (StreamWriter writetext = new StreamWriter(LogFileName, true))
-            {
-                writetext.WriteLine(ffevent.ToString());
-            }
+            Logger.Log(Logger.Level.Info, ffevent.ToString());
         }
 
         public void ProcessEvents(ForceFeedbackEvent[] ffevents)
@@ -43,10 +29,7 @@ namespace SubnauticaTeslasuit.Mock
 
         public void StopAllEvents()
         {
-            using (StreamWriter writetext = new StreamWriter(LogFileName, true))
-            {
-                writetext.WriteLine("Stop all events");
-            }
+            Logger.Log(Logger.Level.Info, "Stop all events");
         }
     }
 }
