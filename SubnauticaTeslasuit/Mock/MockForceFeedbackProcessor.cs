@@ -40,5 +40,13 @@ namespace SubnauticaTeslasuit.Mock
                 ProcessEvent(ffevent);
             }
         }
+
+        public void StopAllEvents()
+        {
+            using (StreamWriter writetext = new StreamWriter(LogFileName, true))
+            {
+                writetext.WriteLine("Stop all events");
+            }
+        }
     }
 }
