@@ -1,4 +1,4 @@
-﻿namespace SubnauticaTeslasuit.Subnautica
+﻿namespace SubnauticaTelemetry.Subnautica
 {
     class Consts
     {

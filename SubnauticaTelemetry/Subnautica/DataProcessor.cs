@@ -1,7 +1,7 @@
-﻿using SubnauticaTeslasuit.ForceFeedback;
+﻿using SubnauticaTelemetry.ForceFeedback;
 using System.Collections.Generic;
 
-namespace SubnauticaTeslasuit.Subnautica
+namespace SubnauticaTelemetry.Subnautica
 {
     class DataProcessor
     {

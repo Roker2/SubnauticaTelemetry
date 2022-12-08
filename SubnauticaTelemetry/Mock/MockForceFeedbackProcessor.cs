@@ -1,8 +1,8 @@
-﻿using SubnauticaTeslasuit.ForceFeedback;
+﻿using SubnauticaTelemetry.ForceFeedback;
 using System.Collections.Generic;
 using Logger = QModManager.Utility.Logger;
 
-namespace SubnauticaTeslasuit.Mock
+namespace SubnauticaTelemetry.Mock
 {
     class MockForceFeedbackProcessor : IForceFeedbackProcessor
     {

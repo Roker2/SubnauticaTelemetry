@@ -7,8 +7,8 @@
     <ProjectGuid>{F318A9D0-8786-498D-B5A4-B9BE5CB09351}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SubnauticaTeslasuit</RootNamespace>
-    <AssemblyName>SubnauticaTeslasuit</AssemblyName>
+    <RootNamespace>SubnauticaTelemetry</RootNamespace>
+    <AssemblyName>SubnauticaTelemetry</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,12 +51,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TsApi">
-      <HintPath>libs\TsApi.dll</HintPath>
-    </Reference>
-    <Reference Include="TsSDK">
-      <HintPath>libs\TsSDK.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.dll</HintPath>

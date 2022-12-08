@@ -1,9 +1,9 @@
 ﻿using SMLHelper.V2.Json;
 using SMLHelper.V2.Options.Attributes;
 
-namespace SubnauticaTeslasuit.Configuration
+namespace SubnauticaTelemetry.Configuration
 {
-    [Menu("Teslasuit Force Feedback")]
+    [Menu("Telemetry settings")]
     class Config: ConfigFile
     {
         [Toggle("Enable water pressure")]

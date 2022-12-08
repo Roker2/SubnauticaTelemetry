@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubnauticaTeslasuit", "SubnauticaTeslasuit\SubnauticaTeslasuit.csproj", "{F318A9D0-8786-498D-B5A4-B9BE5CB09351}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubnauticaTelemetry", "SubnauticaTelemetry\SubnauticaTelemetry.csproj", "{F318A9D0-8786-498D-B5A4-B9BE5CB09351}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

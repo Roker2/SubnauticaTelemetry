@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace SubnauticaTeslasuit.Patches
+namespace SubnauticaTelemetry.Patches
 {
     [HarmonyPatch(typeof(Player), nameof(Player.Update))]
     class PlayerUpdatePatch

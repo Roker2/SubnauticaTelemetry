@@ -2,11 +2,11 @@
 using QModManager.API.ModLoading;
 using System.Reflection;
 using SMLHelper.V2.Handlers;
-using SubnauticaTeslasuit.Configuration;
-using SubnauticaTeslasuit.Subnautica;
-using SubnauticaTeslasuit.Mock;
+using SubnauticaTelemetry.Configuration;
+using SubnauticaTelemetry.Subnautica;
+using SubnauticaTelemetry.Mock;
 
-namespace SubnauticaTeslasuit
+namespace SubnauticaTelemetry
 {
     [QModCore]
     public class Main

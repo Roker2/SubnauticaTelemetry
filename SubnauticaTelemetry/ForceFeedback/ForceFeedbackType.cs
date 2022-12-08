@@ -1,4 +1,4 @@
-﻿namespace SubnauticaTeslasuit.ForceFeedback
+﻿namespace SubnauticaTelemetry.ForceFeedback
 {
     enum ForceFeedbackType
     {

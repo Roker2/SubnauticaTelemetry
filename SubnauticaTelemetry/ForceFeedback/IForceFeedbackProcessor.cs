@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SubnauticaTeslasuit.ForceFeedback
+namespace SubnauticaTelemetry.ForceFeedback
 {
     interface IForceFeedbackProcessor
     {
