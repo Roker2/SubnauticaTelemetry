@@ -5,9 +5,12 @@ namespace SubnauticaTelemetry.Subnautica
 {
     class DataProcessor
     {
+        public bool running { get; set; } = true;
         List<IForceFeedbackProcessor> Processors = new List<IForceFeedbackProcessor>();
         public void ProcessPlayerDepth(float depth)
         {
+            if (!running)
+                return;
             if (!Main.Config.enableWaterPressureEffect)
                 return;
             depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
@@ -22,6 +25,14 @@ namespace SubnauticaTelemetry.Subnautica
         public void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
         {
             Processors.Add(processor);
+        }
+
+        public void StopAllEvents()
+        {
+            foreach (var processor in Processors)
+            {
+                processor.StopAllEvents();
+            }
         }
 
         private float CalculateDepthPrecent(float depth)
