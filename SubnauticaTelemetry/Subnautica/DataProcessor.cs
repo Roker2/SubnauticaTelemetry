@@ -5,12 +5,12 @@ namespace SubnauticaTelemetry.Subnautica
 {
     class DataProcessor
     {
-        public bool running { get; set; } = true;
+        public bool Running { get; set; } = true;
         List<IForceFeedbackProcessor> Processors = new List<IForceFeedbackProcessor>();
 
         public void ProcessPlayerDepth(float depth)
         {
-            if (!running)
+            if (!Running)
                 return;
             if (!Main.Config.enableWaterPressureEffect)
                 return;
@@ -21,7 +21,7 @@ namespace SubnauticaTelemetry.Subnautica
 
         public void ProcessOxygenLevel(float level)
         {
-            if (!running)
+            if (!Running)
                 return;
             if (level > 0.0f)
                 return;

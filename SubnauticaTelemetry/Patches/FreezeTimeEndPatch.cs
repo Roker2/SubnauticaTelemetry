@@ -9,7 +9,7 @@ namespace SubnauticaTelemetry.Patches
         [HarmonyPostfix]
         public static void Postfix()
         {
-            Main.dataProcessor.running = true;
+            Main.dataProcessor.Running = true;
         }
     }
 }
