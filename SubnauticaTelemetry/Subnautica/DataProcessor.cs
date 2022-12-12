@@ -7,6 +7,7 @@ namespace SubnauticaTelemetry.Subnautica
     {
         public bool running { get; set; } = true;
         List<IForceFeedbackProcessor> Processors = new List<IForceFeedbackProcessor>();
+
         public void ProcessPlayerDepth(float depth)
         {
             if (!running)
@@ -16,6 +17,19 @@ namespace SubnauticaTelemetry.Subnautica
             depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
             float depthPrecent = CalculateDepthPrecent(depth);
             ForceFeedbackEvent forceFeedbackEvent = new ForceFeedbackEvent(ForceFeedbackType.WaterPressure, depthPrecent, true);
+            foreach (var processor in Processors)
+            {
+                processor.ProcessEvent(forceFeedbackEvent);
+            }
+        }
+
+        public void ProcessOxygenLevel(float level)
+        {
+            if (!running)
+                return;
+            if (level > 0.0f)
+                return;
+            ForceFeedbackEvent forceFeedbackEvent = new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true);
             foreach (var processor in Processors)
             {
                 processor.ProcessEvent(forceFeedbackEvent);
