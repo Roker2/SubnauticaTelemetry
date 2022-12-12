@@ -69,7 +69,6 @@
     <Compile Include="ForceFeedback\ForceFeedbackType.cs" />
     <Compile Include="ForceFeedback\IForceFeedbackProcessor.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Mock\MockForceFeedbackProcessor.cs" />
     <Compile Include="Patches\FreezeTimeBeginPatch.cs" />
     <Compile Include="Patches\FreezeTimeEndPatch.cs" />
     <Compile Include="Patches\PlayerUpdatePatch.cs" />
