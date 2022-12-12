@@ -8,5 +8,8 @@ namespace SubnauticaTelemetry.Configuration
     {
         [Toggle("Enable water pressure")]
         public bool enableWaterPressureEffect = true;
+
+        [Toggle("Enable no oxygen")]
+        public bool enableNoOxygen = true;
     }
 }

@@ -23,6 +23,8 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
+            if (!Main.Config.enableNoOxygen)
+                return;
             if (level > 0.0f)
                 return;
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true));
