@@ -71,6 +71,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Patches\FreezeTimeBeginPatch.cs" />
     <Compile Include="Patches\FreezeTimeEndPatch.cs" />
+    <Compile Include="Patches\FreezeTimePatches.cs" />
     <Compile Include="Patches\PlayerUpdatePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subnautica\Consts.cs" />
