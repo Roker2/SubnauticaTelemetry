@@ -1,6 +1,6 @@
 ﻿namespace SubnauticaTelemetry.ForceFeedback
 {
-    enum ForceFeedbackType
+    public enum ForceFeedbackType
     {
         WaterPressure,
         NoOxygen

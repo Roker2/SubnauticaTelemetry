@@ -1,6 +1,6 @@
 ﻿namespace SubnauticaTelemetry.ForceFeedback
 {
-    struct ForceFeedbackEvent
+    public struct ForceFeedbackEvent
     {
         public ForceFeedbackType Type;
         public float Multiplier;

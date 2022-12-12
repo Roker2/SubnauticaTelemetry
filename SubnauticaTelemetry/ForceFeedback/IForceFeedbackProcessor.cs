@@ -2,7 +2,7 @@
 
 namespace SubnauticaTelemetry.ForceFeedback
 {
-    interface IForceFeedbackProcessor
+    public interface IForceFeedbackProcessor
     {
         void ProcessEvents(ForceFeedbackEvent[] ffevents);
         void ProcessEvents(List<ForceFeedbackEvent> ffevents);
