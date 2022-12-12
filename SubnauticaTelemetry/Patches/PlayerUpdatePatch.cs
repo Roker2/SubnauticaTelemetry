@@ -14,6 +14,8 @@ namespace SubnauticaTelemetry.Patches
                 float playerDepth = Ocean.main.GetDepthOf(Player.main.gameObject);
                 Main.dataProcessor.ProcessPlayerDepth(playerDepth);
             }
+
+            Main.dataProcessor.ProcessOxygenLevel(__instance.GetOxygenAvailable());
         }
     }
 }
