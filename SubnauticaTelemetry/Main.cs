@@ -4,7 +4,7 @@ using System.Reflection;
 using SMLHelper.V2.Handlers;
 using SubnauticaTelemetry.Configuration;
 using SubnauticaTelemetry.Subnautica;
-using SubnauticaTelemetry.Mock;
+using SubnauticaTelemetry.ForceFeedback;
 
 namespace SubnauticaTelemetry
 {
@@ -20,7 +20,11 @@ namespace SubnauticaTelemetry
         {
             var assembly = Assembly.GetExecutingAssembly();
             new Harmony($"Roker2_{assembly.GetName().Name}").PatchAll(assembly);
-            dataProcessor.AddForceFeedbackProcessor(new MockForceFeedbackProcessor());
+        }
+
+        public static void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
+        {
+            dataProcessor.AddForceFeedbackProcessor(processor);
         }
     }
 }
