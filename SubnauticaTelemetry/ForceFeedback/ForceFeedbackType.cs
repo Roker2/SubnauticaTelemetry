@@ -2,6 +2,7 @@
 {
     enum ForceFeedbackType
     {
-        WaterPressure
+        WaterPressure,
+        NoOxygen
     }
 }
