@@ -3,6 +3,8 @@
     public enum ForceFeedbackType
     {
         WaterPressure,
-        NoOxygen
+        NoOxygen,
+        NoFood,
+        NoWater
     }
 }
