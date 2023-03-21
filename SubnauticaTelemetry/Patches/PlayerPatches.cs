@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace SubnauticaTelemetry.Patches
 {
-    [HarmonyPatch(typeof(Player), nameof(Player.Update))]
-    class PlayerUpdatePatch
+    [HarmonyPatch(typeof(Player))]
+    class PlayerPatches
     {
         [HarmonyPostfix]
-        public static void Postfix(Player __instance)
+        [HarmonyPatch("Update")]
+        public static void UpdatePostfix(Player __instance)
         {
             if (Player.MotorMode.Dive == __instance.motorMode)
             {
