@@ -5,6 +5,7 @@
         WaterPressure,
         NoOxygen,
         NoFood,
-        NoWater
+        NoWater,
+        Damage
     }
 }
