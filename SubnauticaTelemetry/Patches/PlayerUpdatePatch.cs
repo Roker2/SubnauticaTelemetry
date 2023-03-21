@@ -11,7 +11,7 @@ namespace SubnauticaTelemetry.Patches
         {
             if (Player.MotorMode.Dive == __instance.motorMode)
             {
-                float playerDepth = Ocean.main.GetDepthOf(Player.main.gameObject);
+                float playerDepth = __instance.GetDepth();
                 Main.dataProcessor.ProcessPlayerDepth(playerDepth);
             }
 

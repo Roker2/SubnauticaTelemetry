@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
-using QModManager.API.ModLoading;
-using System.Reflection;
+using BepInEx;
 using SMLHelper.V2.Handlers;
 using SubnauticaTelemetry.Configuration;
 using SubnauticaTelemetry.Subnautica;
@@ -8,18 +7,20 @@ using SubnauticaTelemetry.ForceFeedback;
 
 namespace SubnauticaTelemetry
 {
-    [QModCore]
-    public class Main
+    [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
+    public class Main : BaseUnityPlugin
     {
+        private const string PluginGUID = "by.roker2.subnauticatelemetrylibrary";
+        private const string PluginName = "Subnautica Telemetry Library";
+        private const string PluginVersion = "0.1.0";
+
         internal static Config Config { get; } = OptionsPanelHandler.RegisterModOptions<Config>();
 
         internal static DataProcessor dataProcessor = new DataProcessor();
 
-        [QModPatch]
-        public static void Load()
+        private void Start()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            new Harmony($"Roker2_{assembly.GetName().Name}").PatchAll(assembly);
+            new Harmony(PluginGUID).PatchAll();
         }
 
         public static void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
