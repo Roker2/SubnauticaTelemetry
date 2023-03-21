@@ -30,7 +30,7 @@ namespace SubnauticaTelemetry.Subnautica
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true));
         }
 
-        public void ProcessDamageLevel(DamageInfo damageInfo)
+        public void ProcessDamage(DamageInfo damageInfo)
         {
             if (!Running)
                 return;

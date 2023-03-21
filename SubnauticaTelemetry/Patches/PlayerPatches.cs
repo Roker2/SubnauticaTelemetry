@@ -23,7 +23,7 @@ namespace SubnauticaTelemetry.Patches
         [HarmonyPatch("OnTakeDamage")]
         public static void OnTakeDamagePostfix(Player __instance, DamageInfo damageInfo)
         {
-            Main.dataProcessor.ProcessDamageLevel(damageInfo);
+            Main.dataProcessor.ProcessDamage(damageInfo);
         }
     }
 }
