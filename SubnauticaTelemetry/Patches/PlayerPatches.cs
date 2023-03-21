@@ -18,5 +18,12 @@ namespace SubnauticaTelemetry.Patches
 
             Main.dataProcessor.ProcessOxygenLevel(__instance.GetOxygenAvailable());
         }
+
+        [HarmonyPostfix]
+        [HarmonyPatch("OnTakeDamage")]
+        public static void OnTakeDamagePostfix(Player __instance, DamageInfo damageInfo)
+        {
+            Main.dataProcessor.ProcessDamageLevel(damageInfo);
+        }
     }
 }
