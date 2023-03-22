@@ -26,7 +26,10 @@ namespace SubnauticaTelemetry.Subnautica
             if (!SubnauticaTelemetryPlugin.Config.enableNoOxygenEffect)
                 return;
             if (available > 0.0f)
+            {
+                SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 0.0f, false));
                 return;
+            }
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true));
         }
 
