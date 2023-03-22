@@ -11,5 +11,8 @@ namespace SubnauticaTelemetry.Configuration
 
         [Toggle("Enable no oxygen")]
         public bool enableNoOxygen = true;
+
+        [Toggle("Enable damage")]
+        public bool enableDamageEffect = true;
     }
 }
