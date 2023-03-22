@@ -39,14 +39,14 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
-            ProcessHungerLevel(ForceFeedbackType.NoFood, Consts.LowFoodThreshold, Consts.CriticalFoodThreshold, foodLevel, ref prevFoodLevel);
+            ProcessHungerLevel(ForceFeedbackType.NoFood, SubnauticaTelemetryPlugin.Config.enableNoFoodEffect, Consts.LowFoodThreshold, Consts.CriticalFoodThreshold, foodLevel, ref prevFoodLevel);
         }
 
         public void ProcessWaterLevel(float waterLevel)
         {
             if (!Running)
                 return;
-            ProcessHungerLevel(ForceFeedbackType.NoWater, Consts.LowWaterThreshold, Consts.CriticalWaterThreshold, waterLevel, ref prevWaterLevel);
+            ProcessHungerLevel(ForceFeedbackType.NoWater, SubnauticaTelemetryPlugin.Config.enableNoWaterEffect, Consts.LowWaterThreshold, Consts.CriticalWaterThreshold, waterLevel, ref prevWaterLevel);
         }
 
         public void ProcessDamage(DamageInfo damageInfo)
@@ -71,9 +71,10 @@ namespace SubnauticaTelemetry.Subnautica
             }
         }
 
-        private void ProcessHungerLevel(ForceFeedbackType forceFeedbackType, float lowThreshold, float criticalThreshold, float level, ref float prevLevel)
+        private void ProcessHungerLevel(ForceFeedbackType forceFeedbackType, bool enabled, float lowThreshold, float criticalThreshold, float level, ref float prevLevel)
         {
-
+            if (enabled)
+                return;
             if (prevLevel == 0f && level > 0f)
                 SendEvent(new ForceFeedbackEvent(forceFeedbackType, 0f, false));
             else if (level < lowThreshold && prevFoodLevel > lowThreshold)
