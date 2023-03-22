@@ -34,7 +34,7 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / 100f, false));
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / 100f, false, damageInfo.position));
         }
 
         public void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
