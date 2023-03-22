@@ -68,6 +68,7 @@
     <Compile Include="ForceFeedback\ForceFeedbackEvent.cs" />
     <Compile Include="ForceFeedback\ForceFeedbackType.cs" />
     <Compile Include="ForceFeedback\IForceFeedbackProcessor.cs" />
+    <Compile Include="Patches\SurvivalPatches.cs" />
     <Compile Include="SubnauticaTelemetryPlugin.cs" />
     <Compile Include="Patches\FreezeTimePatches.cs" />
     <Compile Include="Patches\PlayerPatches.cs" />
