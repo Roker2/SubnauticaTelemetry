@@ -6,6 +6,8 @@ namespace SubnauticaTelemetry.Subnautica
     class DataProcessor
     {
         public bool Running { get; set; } = true;
+        private float prevFoodLevel = 0f;
+        private float prevWaterLevel = 0f;
         List<IForceFeedbackProcessor> Processors = new List<IForceFeedbackProcessor>();
 
         public void ProcessPlayerDepth(float depth)
@@ -33,6 +35,20 @@ namespace SubnauticaTelemetry.Subnautica
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true));
         }
 
+        public void ProcessFoodLevel(float foodLevel)
+        {
+            if (!Running)
+                return;
+            ProcessHungerLevel(ForceFeedbackType.NoFood, Consts.LowFoodThreshold, Consts.CriticalFoodThreshold, foodLevel, ref prevFoodLevel);
+        }
+
+        public void ProcessWaterLevel(float waterLevel)
+        {
+            if (!Running)
+                return;
+            ProcessHungerLevel(ForceFeedbackType.NoWater, Consts.LowWaterThreshold, Consts.CriticalWaterThreshold, waterLevel, ref prevWaterLevel);
+        }
+
         public void ProcessDamage(DamageInfo damageInfo)
         {
             if (!Running)
@@ -53,6 +69,20 @@ namespace SubnauticaTelemetry.Subnautica
             {
                 processor.StopAllEvents();
             }
+        }
+
+        private void ProcessHungerLevel(ForceFeedbackType forceFeedbackType, float lowThreshold, float criticalThreshold, float level, ref float prevLevel)
+        {
+
+            if (prevLevel == 0f && level > 0f)
+                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 0f, false));
+            else if (level < lowThreshold && prevFoodLevel > lowThreshold)
+                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - lowThreshold / 100f, false));
+            else if (level < criticalThreshold && prevFoodLevel > criticalThreshold)
+                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - criticalThreshold / 100f, false));
+            else if (level == 0f)
+                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f, true));
+            prevLevel = level;
         }
 
         private void SendEvent(ForceFeedbackEvent forceFeedbackEvent)
