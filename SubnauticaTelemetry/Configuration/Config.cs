@@ -10,7 +10,7 @@ namespace SubnauticaTelemetry.Configuration
         public bool enableWaterPressureEffect = true;
 
         [Toggle("Enable no oxygen")]
-        public bool enableNoOxygen = true;
+        public bool enableNoOxygenEffect = true;
 
         [Toggle("Enable damage")]
         public bool enableDamageEffect = true;

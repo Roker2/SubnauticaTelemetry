@@ -23,7 +23,7 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
-            if (!SubnauticaTelemetryPlugin.Config.enableNoOxygen)
+            if (!SubnauticaTelemetryPlugin.Config.enableNoOxygenEffect)
                 return;
             if (available > 0.0f)
                 return;
