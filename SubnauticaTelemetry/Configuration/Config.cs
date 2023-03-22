@@ -12,6 +12,12 @@ namespace SubnauticaTelemetry.Configuration
         [Toggle("Enable no oxygen")]
         public bool enableNoOxygenEffect = true;
 
+        [Toggle("Enable no food")]
+        public bool enableNoFoodEffect = true;
+
+        [Toggle("Enable no water")]
+        public bool enableNoWaterEffect = true;
+
         [Toggle("Enable damage")]
         public bool enableDamageEffect = true;
     }
