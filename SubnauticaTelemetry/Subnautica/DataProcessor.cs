@@ -34,6 +34,8 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
+            if (!SubnauticaTelemetryPlugin.Config.enableDamageEffect)
+                return;
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / 100f, false, damageInfo.position));
         }
 
