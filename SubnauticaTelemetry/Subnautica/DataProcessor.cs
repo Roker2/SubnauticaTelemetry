@@ -12,7 +12,7 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
-            if (!Main.Config.enableWaterPressureEffect)
+            if (!SubnauticaTelemetryPlugin.Config.enableWaterPressureEffect)
                 return;
             depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
             float depthPrecent = CalculateDepthPrecent(depth);
@@ -23,7 +23,7 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (!Running)
                 return;
-            if (!Main.Config.enableNoOxygen)
+            if (!SubnauticaTelemetryPlugin.Config.enableNoOxygen)
                 return;
             if (available > 0.0f)
                 return;

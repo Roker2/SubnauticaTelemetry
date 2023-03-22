@@ -13,17 +13,17 @@ namespace SubnauticaTelemetry.Patches
             if (Player.MotorMode.Dive == __instance.motorMode)
             {
                 float playerDepth = __instance.GetDepth();
-                Main.dataProcessor.ProcessPlayerDepth(playerDepth);
+                SubnauticaTelemetryPlugin.dataProcessor.ProcessPlayerDepth(playerDepth);
             }
 
-            Main.dataProcessor.ProcessOxygenLevel(__instance.GetOxygenAvailable());
+            SubnauticaTelemetryPlugin.dataProcessor.ProcessOxygenLevel(__instance.GetOxygenAvailable());
         }
 
         [HarmonyPostfix]
         [HarmonyPatch("OnTakeDamage")]
         public static void OnTakeDamagePostfix(Player __instance, DamageInfo damageInfo)
         {
-            Main.dataProcessor.ProcessDamage(damageInfo);
+            SubnauticaTelemetryPlugin.dataProcessor.ProcessDamage(damageInfo);
         }
     }
 }

@@ -8,7 +8,7 @@ using SubnauticaTelemetry.ForceFeedback;
 namespace SubnauticaTelemetry
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    public class Main : BaseUnityPlugin
+    public class SubnauticaTelemetryPlugin : BaseUnityPlugin
     {
         private const string PluginGUID = "by.roker2.subnauticatelemetrylibrary";
         private const string PluginName = "Subnautica Telemetry Library";

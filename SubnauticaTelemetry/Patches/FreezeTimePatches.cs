@@ -10,15 +10,15 @@ namespace SubnauticaTelemetry.Patches
         [HarmonyPatch("Begin")]
         public static void BeginPostfix()
         {
-            Main.dataProcessor.Running = false;
-            Main.dataProcessor.StopAllEvents();
+            SubnauticaTelemetryPlugin.dataProcessor.Running = false;
+            SubnauticaTelemetryPlugin.dataProcessor.StopAllEvents();
         }
 
         [HarmonyPostfix]
         [HarmonyPatch("End")]
         public static void EndPostfix()
         {
-            Main.dataProcessor.Running = true;
+            SubnauticaTelemetryPlugin.dataProcessor.Running = true;
         }
     }
 }
