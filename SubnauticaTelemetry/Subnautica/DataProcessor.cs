@@ -36,7 +36,7 @@ namespace SubnauticaTelemetry.Subnautica
                 return;
             if (!SubnauticaTelemetryPlugin.Config.enableDamageEffect)
                 return;
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / 100f, false, damageInfo.position));
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / Consts.MaxPlayerHealthLevel, false, damageInfo.position));
         }
 
         public void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)

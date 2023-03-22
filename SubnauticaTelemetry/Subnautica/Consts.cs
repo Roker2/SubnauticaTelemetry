@@ -9,5 +9,7 @@
         public const float CriticalFoodThreshold = SurvivalConstants.kCriticalFoodThreshold;
         public const float LowWaterThreshold = SurvivalConstants.kLowWaterThreshold;
         public const float CriticalWaterThreshold = SurvivalConstants.kCriticalWaterThreshold;
+
+        public const float MaxPlayerHealthLevel = 100f;
     }
 }
