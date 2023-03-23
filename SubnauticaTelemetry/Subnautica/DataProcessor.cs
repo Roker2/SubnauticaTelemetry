@@ -77,14 +77,12 @@ namespace SubnauticaTelemetry.Subnautica
         {
             if (enabled)
                 return;
-            if (prevLevel == 0f && level > 0f)
-                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 0f, false));
             else if (level < lowThreshold && prevFoodLevel > lowThreshold)
                 SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - lowThreshold / 100f, false));
             else if (level < criticalThreshold && prevFoodLevel > criticalThreshold)
                 SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - criticalThreshold / 100f, false));
             else if (level == 0f)
-                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f, true));
+                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f, false));
             prevLevel = level;
         }
 
