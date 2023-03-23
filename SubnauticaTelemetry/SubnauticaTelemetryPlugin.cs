@@ -23,6 +23,10 @@ namespace SubnauticaTelemetry
             new Harmony(PluginGUID).PatchAll();
         }
 
+        /// <summary>
+        /// Add FF processor for receiving FF events 
+        /// </summary>
+        /// <param name="processor"></param>
         public static void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
         {
             dataProcessor.AddForceFeedbackProcessor(processor);

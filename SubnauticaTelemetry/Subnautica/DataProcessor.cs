@@ -58,6 +58,10 @@ namespace SubnauticaTelemetry.Subnautica
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / Consts.MaxPlayerHealthLevel, false, damageInfo.position));
         }
 
+        /// <summary>
+        /// Add FF processor for receiving FF events 
+        /// </summary>
+        /// <param name="processor"></param>
         public void AddForceFeedbackProcessor(IForceFeedbackProcessor processor)
         {
             Processors.Add(processor);
