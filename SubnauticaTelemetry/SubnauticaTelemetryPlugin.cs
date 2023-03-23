@@ -12,7 +12,7 @@ namespace SubnauticaTelemetry
     {
         private const string PluginGUID = "by.roker2.subnauticatelemetrylibrary";
         private const string PluginName = "Subnautica Telemetry Library";
-        private const string PluginVersion = "0.1.0";
+        private const string PluginVersion = "1.0.0";
 
         internal static Config Config { get; } = OptionsPanelHandler.RegisterModOptions<Config>();
 
