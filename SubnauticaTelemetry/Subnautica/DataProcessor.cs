@@ -17,8 +17,10 @@ namespace SubnauticaTelemetry.Subnautica
             if (!SubnauticaTelemetryPlugin.Config.enableWaterPressureEffect)
                 return;
             depth = Normalize(depth, Consts.MinOceanDepth, Consts.MaxOceanDepth);
+            if (depth == 0f)
+                return;
             float depthPrecent = CalculateDepthPrecent(depth);
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.WaterPressure, depthPrecent, true));
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.WaterPressure, depthPrecent));
         }
 
         public void ProcessOxygenLevel(float availableOxygenLevel)
