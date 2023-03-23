@@ -21,18 +21,14 @@ namespace SubnauticaTelemetry.Subnautica
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.WaterPressure, depthPrecent, true));
         }
 
-        public void ProcessOxygenLevel(float available)
+        public void ProcessOxygenLevel(float availableOxygenLevel)
         {
             if (!Running)
                 return;
             if (!SubnauticaTelemetryPlugin.Config.enableNoOxygenEffect)
                 return;
-            if (available > 0.0f)
-            {
-                SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 0.0f, false));
-                return;
-            }
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1.0f, true));
+            if (availableOxygenLevel == 0f)
+                SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1f));
         }
 
         public void ProcessFoodLevel(float foodLevel)
