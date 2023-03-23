@@ -9,7 +9,7 @@ namespace SubnauticaTelemetry.ForceFeedback
         public bool Replay;
         public Vector3 Position;
 
-        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier, bool replay, Vector3 position = new Vector3())
+        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier, bool replay = false, Vector3 position = new Vector3())
         {
             Type = type;
             Multiplier = multiplier;
