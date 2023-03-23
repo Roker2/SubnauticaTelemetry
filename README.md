@@ -16,6 +16,6 @@ It is main mod for telemetry. Mods with force feedback implementation for device
 
 You need to create a new mod and add `SubnauticaTelemetry.dll` to dependencies. After this you also need to create `SubnauticaTelemetry.ForceFeedback.IForceFeedbackProcessor` implementation and add FF processor object to main mod. You can check example [here](https://github.com/Roker2/MockSubnauticaTelemetry).
 
-## I want to test it without any devices/just watch logs
+## I want to test it without any devices/see some logs
 
 You can install [MockSubnauticaTelemetry](https://github.com/Roker2/MockSubnauticaTelemetry), it is a simple force feedback implementation, which writes telemetry data to log.
