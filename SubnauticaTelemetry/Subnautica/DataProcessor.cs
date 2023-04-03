@@ -53,7 +53,7 @@ namespace SubnauticaTelemetry.Subnautica
                 return;
             if (!SubnauticaTelemetryPlugin.Config.enableDamageEffect)
                 return;
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / Consts.MaxPlayerHealthLevel, false, damageInfo.position));
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / Consts.MaxPlayerHealthLevel, damageInfo.position));
         }
 
         /// <summary>

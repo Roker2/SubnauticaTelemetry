@@ -6,20 +6,18 @@ namespace SubnauticaTelemetry.ForceFeedback
     {
         public ForceFeedbackType Type;
         public float Multiplier;
-        public bool Replay;
         public Vector3 Position;
 
-        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier, bool replay = false, Vector3 position = new Vector3())
+        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier, Vector3 position = new Vector3())
         {
             Type = type;
             Multiplier = multiplier;
-            Replay = replay;
             Position = position;
         }
 
         public override string ToString()
         {
-            return $"Type: {Type}, Multiplier: {Multiplier}, Replay: {Replay}, Direction: {Position}";
+            return $"Type: {Type}, Multiplier: {Multiplier}, Direction: {Position}";
         }
     }
 }
