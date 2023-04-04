@@ -76,13 +76,18 @@ namespace SubnauticaTelemetry.Subnautica
         private void ProcessHungerLevel(ForceFeedbackType forceFeedbackType, bool enabled, float lowThreshold, float criticalThreshold, float level, ref float prevLevel)
         {
             if (enabled)
-                return;
-            else if (level < lowThreshold && prevFoodLevel > lowThreshold)
-                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - lowThreshold / 100f));
-            else if (level < criticalThreshold && prevFoodLevel > criticalThreshold)
-                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f - criticalThreshold / 100f));
-            else if (level == 0f)
-                SendEvent(new ForceFeedbackEvent(forceFeedbackType, 1f));
+            {
+                float multiplier = 0f;
+                if (level < lowThreshold && prevLevel > lowThreshold)
+                    multiplier = 1f - lowThreshold / 100f;
+                else if (level < criticalThreshold && prevLevel > criticalThreshold)
+                    multiplier = 1f - criticalThreshold / 100f;
+                else if (level == 0f)
+                    multiplier = 1f;
+
+                if (multiplier != 0f)
+                    SendEvent(new ForceFeedbackEvent(forceFeedbackType, multiplier));
+            }
             prevLevel = level;
         }
 
