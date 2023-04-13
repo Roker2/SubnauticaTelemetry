@@ -6,9 +6,11 @@ It is a small game modification, which creates and provides telemetry data for f
 
 * Water pressure;
 * No oxygen;
+* Eat and drink;
 * No food;
 * No water;
-* Damage.
+* Damage;
+* Self scanning.
 
 It is main mod for telemetry. Mods with force feedback implementation for device are secondary.
 
