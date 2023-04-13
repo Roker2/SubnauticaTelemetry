@@ -4,6 +4,7 @@
     {
         WaterPressure,
         NoOxygen,
+        EatAndDrink,
         NoFood,
         NoWater,
         Damage
