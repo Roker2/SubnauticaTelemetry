@@ -65,6 +65,15 @@ namespace SubnauticaTelemetry.Subnautica
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Damage, damageInfo.damage / Consts.MaxPlayerHealthLevel, damageInfo.position));
         }
 
+        public void ProcessSelfScanning()
+        {
+            if (!Running)
+                return;
+            if (!SubnauticaTelemetryPlugin.Config.enableSelfScannigEffect)
+                return;
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.SelfScanning));
+        }
+
         /// <summary>
         /// Add FF processor for receiving FF events 
         /// </summary>
