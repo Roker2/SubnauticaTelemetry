@@ -30,7 +30,7 @@ namespace SubnauticaTelemetry.Subnautica
             if (!SubnauticaTelemetryPlugin.Config.enableNoOxygenEffect)
                 return;
             if (availableOxygenLevel == 0f)
-                SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1f));
+                SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen));
         }
 
         public void ProcessEatAndDrink()
@@ -39,7 +39,7 @@ namespace SubnauticaTelemetry.Subnautica
                 return;
             if (!SubnauticaTelemetryPlugin.Config.enableEatAndDrink)
                 return;
-            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.EatAndDrink, 1f));
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.EatAndDrink));
         }
 
         public void ProcessFoodLevel(float foodLevel)
