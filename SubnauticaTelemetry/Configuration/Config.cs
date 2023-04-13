@@ -23,5 +23,8 @@ namespace SubnauticaTelemetry.Configuration
 
         [Toggle("Enable damage")]
         public bool enableDamageEffect = true;
+
+        [Toggle("Enable self scanning")]
+        public bool enableSelfScannigEffect = true;
     }
 }
