@@ -33,6 +33,15 @@ namespace SubnauticaTelemetry.Subnautica
                 SendEvent(new ForceFeedbackEvent(ForceFeedbackType.NoOxygen, 1f));
         }
 
+        public void ProcessEatAndDrink()
+        {
+            if (!Running)
+                return;
+            if (!SubnauticaTelemetryPlugin.Config.enableEatAndDrink)
+                return;
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.EatAndDrink, 1f));
+        }
+
         public void ProcessFoodLevel(float foodLevel)
         {
             if (!Running)
