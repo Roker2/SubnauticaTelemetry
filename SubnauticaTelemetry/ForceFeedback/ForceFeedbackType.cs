@@ -7,6 +7,7 @@
         EatAndDrink,
         NoFood,
         NoWater,
-        Damage
+        Damage,
+        SelfScanning
     }
 }
