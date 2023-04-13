@@ -17,7 +17,7 @@ namespace SubnauticaTelemetry.ForceFeedback
         /// </summary>
         public Vector3 Position;
 
-        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier, Vector3 position = new Vector3())
+        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier = 1f, Vector3 position = new Vector3())
         {
             Type = type;
             Multiplier = multiplier;
