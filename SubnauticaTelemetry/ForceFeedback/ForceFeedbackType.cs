@@ -26,6 +26,7 @@ namespace SubnauticaTelemetry.ForceFeedback
         NoFood,
         NoWater,
         Damage,
-        SelfScanning
+        SelfScanning,
+        Swimming
     }
 }
