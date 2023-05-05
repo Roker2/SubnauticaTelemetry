@@ -18,6 +18,7 @@
 
 using SubnauticaTelemetry.ForceFeedback;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace SubnauticaTelemetry.Subnautica
 {
@@ -90,6 +91,15 @@ namespace SubnauticaTelemetry.Subnautica
             if (!SubnauticaTelemetryPlugin.Config.enableSelfScannigEffect)
                 return;
             SendEvent(new ForceFeedbackEvent(ForceFeedbackType.SelfScanning));
+        }
+
+        public void ProcessMovementSpeed(float movementSpeed)
+        {
+            if (!Running)
+                return;
+            if (!SubnauticaTelemetryPlugin.Config.enableSwimmingEffect)
+                return;
+            SendEvent(new ForceFeedbackEvent(ForceFeedbackType.Swimming, 1f, Vector3.zero, movementSpeed));
         }
 
         /// <summary>
