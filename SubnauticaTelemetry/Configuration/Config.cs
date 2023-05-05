@@ -44,5 +44,8 @@ namespace SubnauticaTelemetry.Configuration
 
         [Toggle("Enable self scanning")]
         public bool enableSelfScannigEffect = true;
+
+        [Toggle("Enable swimming")]
+        public bool enableSwimmingEffect = true;
     }
 }
