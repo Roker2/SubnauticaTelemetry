@@ -34,17 +34,22 @@ namespace SubnauticaTelemetry.ForceFeedback
         /// Position of event trigger, it can be (0, 0, 0) for some events
         /// </summary>
         public Vector3 Position;
+        /// <summary>
+        /// Velocity of event
+        /// </summary>
+        public float Velocity;
 
-        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier = 1f, Vector3 position = new Vector3())
+        public ForceFeedbackEvent(ForceFeedbackType type, float multiplier = 1f, Vector3 position = new Vector3(), float velocity = 0f)
         {
             Type = type;
             Multiplier = multiplier;
             Position = position;
+            Velocity = velocity;
         }
 
         public override string ToString()
         {
-            return $"Type: {Type}, Multiplier: {Multiplier}, Direction: {Position}";
+            return $"Type: {Type}, Multiplier: {Multiplier}, Position: {Position}, Velocity: {Velocity}";
         }
     }
 }
