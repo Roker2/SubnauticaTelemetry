@@ -31,6 +31,7 @@ namespace SubnauticaTelemetry.Patches
             {
                 float playerDepth = __instance.GetDepth();
                 SubnauticaTelemetryPlugin.dataProcessor.ProcessPlayerDepth(playerDepth);
+                SubnauticaTelemetryPlugin.dataProcessor.ProcessMovementSpeed(__instance.movementSpeed);
             }
 
             SubnauticaTelemetryPlugin.dataProcessor.ProcessOxygenLevel(__instance.GetOxygenAvailable());
